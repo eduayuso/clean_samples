@@ -48,6 +48,21 @@ object DepsInjection {
         }
     }
 
+    fun configTest(app: Application) {
+
+        startKoin {
+            androidContext(app)
+            modules(listOf(
+                mockApiClient,
+                repositoryModule,
+                servicesModule,
+                dataModule,
+                interactorsModule,
+                viewModelModule
+            ))
+        }
+    }
+
     val viewModelModule = module {
 
         viewModel { AuthViewModel() }
@@ -107,7 +122,16 @@ object DepsInjection {
         single { provideApiClient() }
     }
 
+    val mockApiClient = module {
+
+        single { provideMockApiClient() }
+    }
+
     fun provideApiClient(): ApiClient = CustomApiClient(
+        DataConstants.Apis.DummyApi.url
+    )
+
+    fun provideMockApiClient(): ApiClient = CustomApiClient(
         DataConstants.Apis.DummyApi.url
     )
 

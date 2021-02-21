@@ -9,7 +9,8 @@ data class UserEntity(
     var email: String? = null,
     var firstName: String? = null,
     var lastName: String? = null,
-    var picture: String? = null
+    var picture: String? = null,
+    var location: LocationEntity? = null
 
 ): IEntity
 
