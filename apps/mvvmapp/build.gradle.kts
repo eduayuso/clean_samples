@@ -18,7 +18,7 @@ android {
         minSdkVersion(Versions.Android.minSdk)
         targetSdkVersion(Versions.Android.targetSdk)
 
-        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner = "dev.eduayuso.cleansamples.mvvmapp.MvvmInstrumentationRunner"
     }
 
     buildTypes {
@@ -55,7 +55,7 @@ dependencies {
         implementation("$it")
     }
 
-    Dependencies.Libs.unitTests.forEach {
+    Dependencies.Libs.tests.forEach {
         testImplementation("$it")
     }
 

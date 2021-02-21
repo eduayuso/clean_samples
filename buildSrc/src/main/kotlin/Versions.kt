@@ -28,10 +28,6 @@ object Versions {
         const val okhttp            = "4.7.2"
         const val coroutines        = "1.4.2"
         const val ktx               = "2.2.0"
-    }
-    
-    object Testing {
-
         const val mockwebserver     = "4.1.0"
         const val junitXExt         = "1.1.2"
         const val testxRules        = "1.3.0"

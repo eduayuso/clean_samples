@@ -40,15 +40,26 @@ object Dependencies {
             "com.squareup.picasso:picasso:2.8"
         )
 
-        val unitTests = listOf(
+        val tests = listOf(
             "junit:junit:4.+",
-            "org.koin:koin-test:${Versions.Libs.koin}"
+            "org.koin:koin-test:${Versions.Libs.koin}",
+            "androidx.test.ext:junit:${Versions.Libs.junitXExt}",
+            "android.arch.core:core-testing:${Versions.Libs.androidArchCoreT}",
+            "com.squareup.okhttp3:mockwebserver:${Versions.Libs.mockwebserver}",
+            "org.koin:koin-test:${Versions.Libs.koin}",
+            "io.mockk:mockk:${Versions.Libs.mockkVersion}"
         )
 
         // Instrumentation tests (Android components required)
         val instTests = listOf(
             "androidx.test.ext:junit:1.1.2",
-            "androidx.test.espresso:espresso-core:3.3.0"
+            "androidx.test.espresso:espresso-core:3.3.0",
+            "androidx.test.ext:junit:$${Versions.Libs.junitXExt}",
+            "androidx.test:rules:$${Versions.Libs.testxRules}",
+            "android.arch.core:core-testing:$${Versions.Libs.androidArchCoreT}",
+            "com.squareup.okhttp3:mockwebserver:$${Versions.Libs.mockwebserver}",
+            "org.koin:koin-test:$${Versions.Libs.koin}",
+            "androidx.test.espresso:espresso-contrib:$${Versions.Libs.espressoContrib}"
         )
     }
 }
