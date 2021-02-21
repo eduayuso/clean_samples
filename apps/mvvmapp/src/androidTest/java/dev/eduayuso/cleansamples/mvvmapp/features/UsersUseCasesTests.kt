@@ -1,6 +1,13 @@
 package dev.eduayuso.cleansamples.mvvmapp.features
 
+import androidx.test.core.app.ActivityScenario.launch
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.newSingleThreadContext
+import kotlinx.coroutines.test.runBlockingTest
+import kotlinx.coroutines.test.setMain
+import org.junit.After
 import org.junit.Assert
+import org.junit.Before
 import org.junit.Test
 
 // TODO Mockwebserver
@@ -8,41 +15,56 @@ class UsersUseCasesTests {
 
     private val interactor = UsersMockInteractor()
 
+    @Before
+    fun setUp() {
+    }
+
     @Test
-    suspend fun fetchEmptyUserList() {
+    fun fetchEmptyUserList() {
 
         interactor.setMockUserListEmpty()
-        val users = interactor.getUserList()
-        Assert.assertTrue(users.isEmpty())
+        runBlockingTest {
+            val users = interactor.getUserList()
+            Assert.assertTrue(users.isEmpty())
+        }
     }
 
     @Test
-    suspend fun fetchUserList() {
+    fun fetchUserList() {
 
         interactor.setMockUserListNotEmpty()
-        val users = interactor.getUserList()
-        Assert.assertFalse(users.isEmpty())
+        runBlockingTest {
+            val users = interactor.getUserList()
+            Assert.assertFalse(users.isEmpty())
+        }
     }
 
     @Test
-    suspend fun fetchUserDetail() {
+    fun fetchUserDetail() {
 
         interactor.setMockUserListNotEmpty()
+        var id: String? = null
 
-        val users = interactor.getUserList()
-        val user = users.first()
-        val id = user.id
-
-        // User is not full (without details -> location == null)
-        Assert.assertNull(user.location)
+        runBlockingTest {
+            val users = interactor.getUserList()
+            val user = users.first()
+            id = user.id
+            // User is not full (without details -> location == null)
+            Assert.assertNull(user.location)
+        }
 
         interactor.setFullUser()
         Assert.assertNotNull(id)
 
-        val fullUser = interactor.getUserDetail(id!!)
-        Assert.assertNotNull(fullUser)
+        runBlockingTest {
+            val fullUser = interactor.getUserDetail(id!!)
+            Assert.assertNotNull(fullUser)
+            // User is full, with details like 'location'
+            Assert.assertNotNull(fullUser.location)
+        }
+    }
 
-        // User is full, with details like 'location'
-        Assert.assertNotNull(user.location)
+    @After
+    fun tearDown() {
     }
 }

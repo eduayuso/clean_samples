@@ -44,7 +44,7 @@ dependencies {
         implementation("$it")
     }
 
-    Dependencies.Libs.unitTests.forEach {
+    Dependencies.Libs.tests.forEach {
         testImplementation("$it")
     }
 
