@@ -25,10 +25,6 @@ class UsersMockInteractor: IUsersUseCases {
             email = "eduayuso2@gmail.com"
         )
 
-    private val user1Full = user1.apply {
-        location = LocationEntity("a,", "b", "c", "d", "e")
-    }
-
     private val post1 =
         PostEntity(
             id = "p1",
@@ -50,7 +46,6 @@ class UsersMockInteractor: IUsersUseCases {
 
     private var _userList: List<UserEntity>? = null
     private var _user: UserEntity? = null
-    private var _fullUser: UserEntity? = null
     private var _postList: List<PostEntity>? = null
 
     fun setMockUserListEmpty() {
@@ -66,12 +61,14 @@ class UsersMockInteractor: IUsersUseCases {
     }
 
     fun setFullUser() {
-        _fullUser = user1Full
+        user1.apply {
+            location = LocationEntity("a,", "b", "c", "d", "e")
+        }
     }
 
     override suspend fun getUserList() = _userList ?: emptyList()
 
-    override suspend fun getUserDetail(id: String) = user1Full
+    override suspend fun getUserDetail(id: String) = user1
 
     override suspend fun getUserPosts(id: String) = _postList ?: emptyList()
 }
