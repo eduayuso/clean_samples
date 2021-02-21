@@ -1,0 +1,1 @@
+# Use this package to implement your repositories with Retrofit, in alternative to Ktor API client
