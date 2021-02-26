@@ -1,12 +1,13 @@
-package dev.eduayuso.cleansamples.shared.impl
+package dev.eduayuso.cleansamples.shared.impl.di
 
 import dev.eduayuso.cleansamples.shared.impl.services.UsersService
-import android.app.Application
 import dev.eduayuso.cleansamples.shared.data.IDataManager
 import dev.eduayuso.cleansamples.shared.data.services.IPostsService
 import dev.eduayuso.cleansamples.shared.data.services.IUsersService
 import dev.eduayuso.cleansamples.shared.domain.usecases.IPostsUseCases
 import dev.eduayuso.cleansamples.shared.domain.usecases.IUsersUseCases
+import dev.eduayuso.cleansamples.shared.impl.DataConstants
+import dev.eduayuso.cleansamples.shared.impl.DataManager
 import dev.eduayuso.cleansamples.shared.presentation.features.auth.AuthViewModel
 import dev.eduayuso.cleansamples.shared.impl.interactors.AuthInteractor
 import dev.eduayuso.cleansamples.shared.impl.interactors.MessagesInteractor
@@ -21,49 +22,17 @@ import dev.eduayuso.cleansamples.shared.impl.source.remote.MessagesRemoteReposit
 import dev.eduayuso.cleansamples.shared.impl.source.remote.PostsRemoteRepository
 import dev.eduayuso.cleansamples.shared.impl.source.remote.UsersRemoteRepository
 import dev.eduayuso.cleansamples.shared.impl.source.remote.ktor.impl.ApiClient
-import dev.eduayuso.cleansamples.shared.impl.source.remote.ktor.impl.CustomApiClient
+import dev.eduayuso.cleansamples.shared.impl.source.remote.ktor.impl.HttpApiClient
 import dev.eduayuso.cleansamples.shared.presentation.features.home.HomeViewModel
 import dev.eduayuso.cleansamples.shared.presentation.features.feed.PostListViewModel
 import dev.eduayuso.cleansamples.shared.presentation.features.users.UserDetailViewModel
 import dev.eduayuso.cleansamples.shared.presentation.features.users.UserListViewModel
-import org.koin.android.ext.koin.androidContext
 import org.koin.androidx.viewmodel.dsl.viewModel
-import org.koin.core.context.startKoin
 import org.koin.dsl.module
 
-object DepsInjection {
+object DepsInjection: IDepsInjection() {
 
-    fun config(app: Application) {
-
-        startKoin {
-            androidContext(app)
-            modules(listOf(
-                remoteApiClient,
-                repositoryModule,
-                servicesModule,
-                dataModule,
-                interactorsModule,
-                viewModelModule
-            ))
-        }
-    }
-
-    fun configTest(app: Application) {
-
-        startKoin {
-            androidContext(app)
-            modules(listOf(
-                mockApiClient,
-                repositoryModule,
-                servicesModule,
-                dataModule,
-                interactorsModule,
-                viewModelModule
-            ))
-        }
-    }
-
-    val viewModelModule = module {
+    override val viewModelModule = module {
 
         viewModel { AuthViewModel() }
         viewModel { HomeViewModel() }
@@ -72,7 +41,7 @@ object DepsInjection {
         viewModel { PostListViewModel() }
     }
 
-    val interactorsModule = module {
+    override val interactorsModule = module {
 
         single { AuthInteractor(get()) }
         single { provideUsersUseCases() }
@@ -84,7 +53,7 @@ object DepsInjection {
 
     fun providePostsUseCases(): IPostsUseCases = PostsInteractor()
 
-    val servicesModule = module {
+    override val servicesModule = module {
 
         single { provideUsersService() }
         single { providePostsService() }
@@ -94,7 +63,7 @@ object DepsInjection {
     fun provideUsersService(): IUsersService = UsersService()
     fun providePostsService(): IPostsService = PostsService()
 
-    val repositoryModule = module {
+    override val repositoryModule = module {
 
         /**
          * Users repositories
@@ -117,25 +86,17 @@ object DepsInjection {
         single { MessagesRemoteRepository(get()) }
     }
 
-    val remoteApiClient = module {
+    override val remoteApiClient = module {
 
         single { provideApiClient() }
     }
 
-    val mockApiClient = module {
-
-        single { provideMockApiClient() }
-    }
-
-    fun provideApiClient(): ApiClient = CustomApiClient(
-        DataConstants.Apis.DummyApi.url
+    fun provideApiClient() = ApiClient(
+        DataConstants.Apis.DummyApi.url,
+        HttpApiClient.build()
     )
 
-    fun provideMockApiClient(): ApiClient = CustomApiClient(
-        DataConstants.Apis.DummyApi.url
-    )
-
-    val dataModule = module {
+    override val dataModule = module {
 
         single { provideDataManager() }
     }

@@ -1,7 +1,7 @@
 package dev.eduayuso.cleansamples.mvvmapp
 
 import android.app.Application
-import dev.eduayuso.cleansamples.shared.impl.DepsInjection
+import dev.eduayuso.cleansamples.shared.impl.di.DepsInjection
 
 open class MvvmApp: Application() {
 

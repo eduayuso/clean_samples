@@ -18,7 +18,7 @@ android {
         minSdkVersion(Versions.Android.minSdk)
         targetSdkVersion(Versions.Android.targetSdk)
 
-        testInstrumentationRunner = "dev.eduayuso.cleansamples.mvvmapp.MvvmInstrumentationRunner"
+        testInstrumentationRunner = Apps.MvvmApp.testInstRunner
     }
 
     buildTypes {
@@ -39,6 +39,7 @@ android {
     packagingOptions {
         exclude("META-INF/AL2.0")
         exclude("META-INF/LGPL2.1")
+        exclude("META-INF/*.kotlin_module")
     }
 
     kotlinOptions {

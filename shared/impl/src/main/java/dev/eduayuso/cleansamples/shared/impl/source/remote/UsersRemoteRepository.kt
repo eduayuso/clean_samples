@@ -48,7 +48,7 @@ class UsersRemoteRepository: IRemoteRepository<String, UserEntity> {
     /**
      * https://dummyapi.io/data/api/user/0F8JIqi4zwvb77FGz6Wt/post?limit=10
      */
-    suspend fun getUserPosts(id: String): List<PostEntity> {
+    suspend fun getPosts(id: String): List<PostEntity> {
 
         val url = "$usersUrl/$id/$postsUrl?$limit"
         var type = ListSerializer(PostEntity.serializer())

@@ -21,7 +21,5 @@ interface IHttpRequest {
 
     suspend fun <T> response(serializer: KSerializer<T>?): T?
 
-    suspend fun <T> responseList(serializer: KSerializer<List<T>>?): List<T>?
-
     suspend fun response(): String?
 }
