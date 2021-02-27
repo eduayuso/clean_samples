@@ -11,11 +11,33 @@ The project is Gradle optimized, and divided in modules so that each one has onl
 * **/shared/impl/** Contains the implementation of interactors, services and repositories. Depends on data and domains layers and in data access libraries (Retrofit, Ktor, SQLite, ...)
 * **/shared/domain/** Contains the data entities and the use cases interfaces. Only has a dependency on kotlin serialization library.
 
-## Samples
+## Apps and architecture used
 Each sample app is made with a different architecture:
-* [x] MVVM (Model View View-model).
-* [ ] MVP (Model View Presenter)
-* [ ] MVI (Model View Intent)
+* [x] /apps/mvvmapp: MVVM (Model View View-model).
+* [ ] /apps/mvpapp: MVP (Model View Presenter)
+* [ ] /apps/mviapp: MVI (Model View Intent)
+
+## Features
+* [ ] Login
+* [ ] SignUp
+* [x] UserList
+* [x] UserDetail
+* [x] PostList
+* [x] PostDetail
+
+## Unit Tests
+* [ ] AuthenticationUsesCases
+* [x] UsersUsesCases
+* [ ] PostsUsesCases
+
+## Instrumentation Tests
+* [ ] LoginActivity
+* [ ] SignUpActivity
+* [ ] HomeActivity
+* [ ] UserListActivity
+* [ ] UserDetailActivity
+* [ ] PostListActivity
+* [ ] PostDetailActivity
 
 ## License
 

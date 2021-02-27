@@ -1,4 +1,4 @@
-package dev.eduayuso.cleansamples.mvvmapp
+package dev.eduayuso.cleansamples.mvvmapp.config
 
 import android.app.Application
 import android.content.Context

@@ -42,11 +42,12 @@ dependencies {
         Dependencies.Libs.kotlinStdLib,
         Dependencies.Libs.coroutinesCore,
         Dependencies.Libs.coroutinesAndroid,
-        Dependencies.Libs.lifecycleRuntime,
-        Dependencies.Libs.lifecycleLivedata,
-        Dependencies.Libs.lifecycleViewmodel,
         Dependencies.Libs.koin
     ).forEach {
+        implementation("$it")
+    }
+
+    Dependencies.Libs.lifeCycle.forEach {
         implementation("$it")
     }
 
