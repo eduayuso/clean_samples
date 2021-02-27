@@ -18,5 +18,7 @@ class PostEntity(
 @Serializable
 data class PostListResponse(
 
-    val data: List<PostEntity>? = null
+    val data: List<PostEntity>? = null,
+    val total: Int? = null,
+    val page: Int? = null
 )

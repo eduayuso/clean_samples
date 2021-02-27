@@ -17,5 +17,7 @@ data class UserEntity(
 @Serializable
 data class UserListResponse(
 
-    val data: List<UserEntity>? = null
+    val data: List<UserEntity>? = null,
+    val total: Int? = null,
+    val page: Int? = null
 )

@@ -38,9 +38,12 @@ dependencies {
         Dependencies.Libs.coroutinesCore,
         Dependencies.Libs.coroutinesAndroid,
         Dependencies.Libs.koin,
-        Dependencies.Libs.koinViewModel,
-        Dependencies.Libs.ktorClient
+        Dependencies.Libs.koinViewModel
     ).forEach {
+        implementation("$it")
+    }
+
+    Dependencies.Libs.ktorClient.forEach {
         implementation("$it")
     }
 

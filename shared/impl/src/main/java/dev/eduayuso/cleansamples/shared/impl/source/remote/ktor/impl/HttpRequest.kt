@@ -25,17 +25,6 @@ class HttpRequest(
         return this
     }
 
-    override suspend fun <T> responseList(serializer: KSerializer<List<T>>?): List<T>? {
-
-        try {
-            val result: String = httpClient.request(this.request)
-            return if (serializer == null) null
-            else this.json.decodeFromString(serializer, result)
-        } catch (pipeline: ReceivePipelineException) {
-            throw pipeline.cause
-        }
-    }
-
     override suspend fun <T> response(serializer: KSerializer<T>?): T? {
 
         try {

@@ -1,5 +1,6 @@
 package dev.eduayuso.cleansamples.shared.impl.source.remote.ktor
 
+import dev.eduayuso.cleansamples.shared.impl.source.remote.ktor.impl.RestConsumer
 import io.ktor.client.*
 import kotlinx.serialization.json.Json
 

@@ -1,3 +1,5 @@
+import sun.util.logging.resources.logging
+
 object Dependencies {
 
     object Plugins {
@@ -25,10 +27,18 @@ object Dependencies {
         const val coroutinesCore        = "org.jetbrains.kotlinx:kotlinx-coroutines-core:${Versions.Libs.coroutines}"
         const val koin                  = "org.koin:koin-android:${Versions.Libs.koin}"
         const val koinViewModel         = "org.koin:koin-androidx-viewmodel:${Versions.Libs.koin}"
-        const val lifecycleViewmodel    = "androidx.lifecycle:lifecycle-viewmodel-ktx:${Versions.Libs.ktx}"
-        const val lifecycleRuntime      = "androidx.lifecycle:lifecycle-runtime-ktx:${Versions.Libs.ktx}"
-        const val lifecycleLivedata     = "androidx.lifecycle:lifecycle-livedata-ktx:${Versions.Libs.ktx}"
-        const val ktorClient            = "io.ktor:ktor-client-android:1.3.2"
+
+        val lifeCycle = listOf(
+            "androidx.lifecycle:lifecycle-viewmodel-ktx:${Versions.Libs.ktx}",
+            "androidx.lifecycle:lifecycle-runtime-ktx:${Versions.Libs.ktx}",
+            "androidx.lifecycle:lifecycle-livedata-ktx:${Versions.Libs.ktx}"
+        )
+
+        val ktorClient = listOf(
+            "io.ktor:ktor-client-android:${Versions.Libs.ktor}",
+            "io.ktor:ktor-client-mock-jvm:${Versions.Libs.ktor}",
+            "io.ktor:ktor-client-logging-jvm:${Versions.Libs.ktor}"
+        )
 
         val androidUi = listOf(
             "androidx.appcompat:appcompat:1.2.0",
