@@ -11,6 +11,7 @@ import dev.eduayuso.cleansamples.shared.impl.DataManager
 import dev.eduayuso.cleansamples.shared.impl.interactors.PostsInteractor
 import dev.eduayuso.cleansamples.shared.impl.interactors.UsersInteractor
 import dev.eduayuso.cleansamples.shared.impl.services.PostsService
+import dev.eduayuso.cleansamples.shared.impl.source.cache.UsersCacheRepository
 import dev.eduayuso.cleansamples.shared.impl.source.remote.MessagesRemoteRepository
 import dev.eduayuso.cleansamples.shared.impl.source.remote.PostsRemoteRepository
 import dev.eduayuso.cleansamples.shared.impl.source.remote.UsersRemoteRepository
@@ -39,9 +40,9 @@ object TestsDepsInjection: IDepsInjection() {
         single { MessagesInteractor(get()) }*/
     }
 
-    fun provideUsersUseCases(): IUsersUseCases = UsersInteractor()
+    private fun provideUsersUseCases(): IUsersUseCases = UsersInteractor()
 
-    fun providePostsUseCases(): IPostsUseCases = PostsInteractor()
+    private fun providePostsUseCases(): IPostsUseCases = PostsInteractor()
 
     override val servicesModule = module {
 
@@ -50,15 +51,15 @@ object TestsDepsInjection: IDepsInjection() {
         single { MessagesService(get(), get()) }*/
     }
 
-    fun provideUsersService(): IUsersService = UsersService()
-    fun providePostsService(): IPostsService = PostsService()
+    private fun provideUsersService(): IUsersService = UsersService()
+    private fun providePostsService(): IPostsService = PostsService()
 
     override val repositoryModule = module {
 
         /**
          * Users repositories
          */
-        //single { UsersCacheRepository() }
+        single { UsersCacheRepository() }
         single { UsersRemoteRepository() }
         // single { UsersDbRepository(get()) }
         // single { UsersPrefsRepository(get()) }
@@ -81,7 +82,7 @@ object TestsDepsInjection: IDepsInjection() {
         single { provideMockApiClient() }
     }
 
-    fun provideMockApiClient() = ApiClient(
+    private fun provideMockApiClient() = ApiClient(
         DataConstants.Apis.DummyApi.url,
         HttpMockApiClient.build()
     )

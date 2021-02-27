@@ -2,6 +2,7 @@ package dev.eduayuso.cleansamples.shared.impl.source.remote
 
 import dev.eduayuso.cleansamples.shared.data.repository.IRemoteRepository
 import dev.eduayuso.cleansamples.shared.domain.entities.PostEntity
+import dev.eduayuso.cleansamples.shared.domain.entities.PostListResponse
 import dev.eduayuso.cleansamples.shared.domain.entities.UserEntity
 import dev.eduayuso.cleansamples.shared.domain.entities.UserListResponse
 import dev.eduayuso.cleansamples.shared.impl.DataConstants
@@ -29,7 +30,10 @@ class UsersRemoteRepository: IRemoteRepository<String, UserEntity> {
      */
     override suspend fun getAll(): List<UserEntity> {
 
-        val listWrapper = api.consume("$usersUrl?$limit").get().response(UserListResponse.serializer())
+        val url = "$usersUrl?$limit"
+        val type = UserListResponse.serializer()
+
+        val listWrapper = api.consume(url).get().response(type)
         return listWrapper?.data ?: emptyList()
     }
 
@@ -50,9 +54,10 @@ class UsersRemoteRepository: IRemoteRepository<String, UserEntity> {
      */
     suspend fun getPosts(id: String): List<PostEntity> {
 
-        val url = "$usersUrl/$id/$postsUrl?$limit"
-        var type = ListSerializer(PostEntity.serializer())
+        val url = "$usersUrl/$id/$postsUrl/"
+        var type = PostListResponse.serializer()
 
-        return api.consume(url).get().response(type) ?: emptyList()
+        val listWrapper = api.consume(url).get().response(type)
+        return listWrapper?.data ?: emptyList()
     }
 }

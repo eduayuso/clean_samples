@@ -14,16 +14,16 @@ class ApiClient(
 ): IApiClient {
 
     override val json =
-            Json {
-                encodeDefaults = false
-                isLenient = true
-                ignoreUnknownKeys = true
-                useArrayPolymorphism = true
-            }
+        Json {
+            encodeDefaults = false
+            isLenient = true
+            ignoreUnknownKeys = true
+            useArrayPolymorphism = true
+        }
 
     override fun getHeaders() = mapOf(
 
-            DataConstants.Http.Headers.appId to DataConstants.Apis.DummyApi.appId
+        DataConstants.Http.Headers.appId to DataConstants.Apis.DummyApi.appId
     )
 
     fun consume(url:String): RestConsumer {

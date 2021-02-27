@@ -11,15 +11,25 @@ abstract class IDepsInjection {
 
         startKoin {
             androidContext(app)
-            modules(listOf(
-                DepsInjection.remoteApiClient,
-                DepsInjection.repositoryModule,
-                DepsInjection.servicesModule,
-                DepsInjection.dataModule,
-                DepsInjection.interactorsModule,
-                DepsInjection.viewModelModule
-            ))
+            modules(moduleList)
         }
+    }
+
+    fun config() {
+        startKoin {
+            modules(moduleList)
+        }
+    }
+
+    private val moduleList by lazy {
+        listOf(
+            this.remoteApiClient,
+            this.repositoryModule,
+            this.servicesModule,
+            this.dataModule,
+            this.interactorsModule,
+            this.viewModelModule
+        )
     }
 
     abstract val viewModelModule: Module
