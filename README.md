@@ -35,12 +35,13 @@ Each sample app is made with a different architecture:
 * [ ] PostsUsesCases
 
 ## Instrumentation Tests
-* [ ] LoginActivity
-* [ ] SignUpActivity
+* [ ] AuthActivity
+* [ ] LoginFragment
+* [ ] SignUpFragment
 * [ ] HomeActivity
-* [ ] UserListActivity
+* [ ] UserListFragment
 * [ ] UserDetailActivity
-* [ ] PostListActivity
+* [ ] PostListFragment
 * [ ] PostDetailActivity
 
 ## License
