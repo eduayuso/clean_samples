@@ -1,8 +1,11 @@
 rootProject.name = "CleanSamples"
 
 include(":apps:mvvmapp")
+include(":apps:mvpapp")
 
 include(":shared:domain")
 include(":shared:data")
-include(":shared:presentation")
 include(":shared:impl")
+
+include(":shared:presentation:mvvm")
+include(":shared:presentation:mvp")

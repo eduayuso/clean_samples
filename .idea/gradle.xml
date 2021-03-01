@@ -12,6 +12,7 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/apps" />
+            <option value="$PROJECT_DIR$/apps/mvpapp" />
             <option value="$PROJECT_DIR$/apps/mvvmapp" />
             <option value="$PROJECT_DIR$/buildSrc" />
             <option value="$PROJECT_DIR$/shared" />
@@ -19,6 +20,8 @@
             <option value="$PROJECT_DIR$/shared/domain" />
             <option value="$PROJECT_DIR$/shared/impl" />
             <option value="$PROJECT_DIR$/shared/presentation" />
+            <option value="$PROJECT_DIR$/shared/presentation/mvp" />
+            <option value="$PROJECT_DIR$/shared/presentation/mvvm" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

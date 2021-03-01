@@ -1,10 +1,11 @@
 object Versions {
 
     /**
-     * Kotlin and Gradle versions
+     * Kotlin, Java and Gradle versions
      */
     const val kotlin                = "1.4.30"
     const val gradle                = "4.1.2"
+    const val java                  = "1.8"
 
     /**
      * Android SDK and tools versions
