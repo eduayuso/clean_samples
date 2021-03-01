@@ -17,7 +17,7 @@ import dev.eduayuso.cleansamples.shared.impl.source.remote.PostsRemoteRepository
 import dev.eduayuso.cleansamples.shared.impl.source.remote.UsersRemoteRepository
 import dev.eduayuso.cleansamples.shared.impl.source.remote.ktor.HttpMockApiClient
 import dev.eduayuso.cleansamples.shared.impl.source.remote.ktor.impl.ApiClient
-import dev.eduayuso.cleansamples.shared.presentation.features.users.UserListViewModel
+import dev.eduayuso.cleansamples.shared.presentation.mvvm.features.users.UserListViewModel
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 

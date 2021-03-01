@@ -9,14 +9,21 @@ object Dependencies {
         const val kotlinAndroid         = "kotlin-android"
     }
 
-    private const val shared = "shared"
+    private const val shared            = "shared"
+    private const val presentation      = "$shared:presentation"
     
     object Modules {
 
         const val domain                = ":$shared:domain"
         const val data                  = ":$shared:data"
-        const val presentation          = ":$shared:presentation"
         const val impl                  = ":$shared:impl"
+
+        object Presentation {
+
+            const val mvvm              = ":$presentation:mvvm"
+            const val mvp               = ":$presentation:mvp"
+            const val mvi               = ":$presentation:mvi"
+        }
     }
     
     object Libs {

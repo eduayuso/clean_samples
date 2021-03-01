@@ -8,7 +8,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.Fragment
 import dev.eduayuso.cleansamples.mvvmapp.BR
-import dev.eduayuso.cleansamples.shared.presentation.CleanViewModel
+import dev.eduayuso.cleansamples.shared.presentation.mvvm.CleanViewModel
 
 abstract class CleanFragment<BindingClass : ViewDataBinding>: Fragment() {
 

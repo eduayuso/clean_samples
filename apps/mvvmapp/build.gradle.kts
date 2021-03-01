@@ -4,6 +4,8 @@ plugins {
     id("kotlin-kapt")
 }
 
+val app = Apps.MvvmApp
+
 android {
 
     compileSdkVersion(Versions.Android.compileSdk)
@@ -11,14 +13,14 @@ android {
 
     defaultConfig {
 
-        applicationId = Apps.MvvmApp.id
-        versionName = Apps.MvvmApp.versionName
-        versionCode = Apps.MvvmApp.versionCode
+        applicationId = app.id
+        versionName = app.versionName
+        versionCode = app.versionCode
 
         minSdkVersion(Versions.Android.minSdk)
         targetSdkVersion(Versions.Android.targetSdk)
 
-        testInstrumentationRunner = Apps.MvvmApp.testInstRunner
+        testInstrumentationRunner = app.testInstRunner
     }
 
     buildTypes {
@@ -33,7 +35,7 @@ android {
     }
 
     buildFeatures {
-        dataBinding = true
+        dataBinding = app.useDataBinding
     }
 
     packagingOptions {
@@ -70,7 +72,7 @@ dependencies {
     }
 
     // Android apps can only access to presentation layer and DI module
-    implementation(project("${Dependencies.Modules.presentation}"))
+    implementation(project("${Dependencies.Modules.Presentation.mvvm}"))
     implementation(project("${Dependencies.Modules.impl}"))
     implementation(project("${Dependencies.Modules.domain}"))
 }

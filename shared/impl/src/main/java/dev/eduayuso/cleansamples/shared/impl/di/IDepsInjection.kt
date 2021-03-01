@@ -7,11 +7,11 @@ import org.koin.core.module.Module
 
 abstract class IDepsInjection {
 
-    fun config(app: Application) {
+    fun config(app: Application, presenterModule: Module) {
 
         startKoin {
             androidContext(app)
-            modules(moduleList)
+            modules(moduleList.apply { add(presenterModule) })
         }
     }
 
@@ -22,17 +22,15 @@ abstract class IDepsInjection {
     }
 
     private val moduleList by lazy {
-        listOf(
+        mutableListOf(
             this.remoteApiClient,
             this.repositoryModule,
             this.servicesModule,
             this.dataModule,
-            this.interactorsModule,
-            this.viewModelModule
+            this.interactorsModule
         )
     }
 
-    abstract val viewModelModule: Module
     abstract val interactorsModule: Module
     abstract val servicesModule: Module
     abstract val repositoryModule: Module

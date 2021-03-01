@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.GridLayoutManager
 import dev.eduayuso.cleansamples.mvvmapp.R
 import dev.eduayuso.cleansamples.mvvmapp.components.ui.CleanFragment
 import dev.eduayuso.cleansamples.mvvmapp.databinding.FragmentUserListBinding
-import dev.eduayuso.cleansamples.shared.presentation.features.users.UserListViewModel
+import dev.eduayuso.cleansamples.shared.presentation.mvvm.features.users.UserListViewModel
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class UserListFragment: CleanFragment<FragmentUserListBinding>() {

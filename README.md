@@ -13,17 +13,21 @@ The project is Gradle optimized, and divided in modules so that each one has onl
 
 ## Apps and architecture used
 Each sample app is made with a different architecture:
+* [x] /apps/mvpapp: MVP (Model View Presenter)
 * [x] /apps/mvvmapp: MVVM (Model View View-model).
-* [ ] /apps/mvpapp: MVP (Model View Presenter)
 * [ ] /apps/mviapp: MVI (Model View Intent)
 
 ## Features
 * [ ] Login
 * [ ] SignUp
 * [x] UserList
-* [x] UserDetail
+* [ ] UserDetail
 * [x] PostList
-* [x] PostDetail
+* [ ] PostDetail
+
+## Network implementation
+* [x] Ktor
+* [ ] Retrofit
 
 ## Unit Tests
 * [ ] AuthenticationUsesCases
