@@ -8,7 +8,6 @@ import dev.eduayuso.cleansamples.shared.domain.usecases.IPostsUseCases
 import dev.eduayuso.cleansamples.shared.domain.usecases.IUsersUseCases
 import dev.eduayuso.cleansamples.shared.impl.DataConstants
 import dev.eduayuso.cleansamples.shared.impl.DataManager
-import dev.eduayuso.cleansamples.shared.presentation.features.auth.AuthViewModel
 import dev.eduayuso.cleansamples.shared.impl.interactors.AuthInteractor
 import dev.eduayuso.cleansamples.shared.impl.interactors.MessagesInteractor
 import dev.eduayuso.cleansamples.shared.impl.interactors.PostsInteractor
@@ -23,23 +22,9 @@ import dev.eduayuso.cleansamples.shared.impl.source.remote.PostsRemoteRepository
 import dev.eduayuso.cleansamples.shared.impl.source.remote.UsersRemoteRepository
 import dev.eduayuso.cleansamples.shared.impl.source.remote.ktor.impl.ApiClient
 import dev.eduayuso.cleansamples.shared.impl.source.remote.ktor.impl.HttpApiClient
-import dev.eduayuso.cleansamples.shared.presentation.features.home.HomeViewModel
-import dev.eduayuso.cleansamples.shared.presentation.features.feed.PostListViewModel
-import dev.eduayuso.cleansamples.shared.presentation.features.users.UserDetailViewModel
-import dev.eduayuso.cleansamples.shared.presentation.features.users.UserListViewModel
-import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 
 object DepsInjection: IDepsInjection() {
-
-    override val viewModelModule = module {
-
-        viewModel { AuthViewModel() }
-        viewModel { HomeViewModel() }
-        viewModel { UserListViewModel() }
-        viewModel { UserDetailViewModel() }
-        viewModel { PostListViewModel() }
-    }
 
     override val interactorsModule = module {
 

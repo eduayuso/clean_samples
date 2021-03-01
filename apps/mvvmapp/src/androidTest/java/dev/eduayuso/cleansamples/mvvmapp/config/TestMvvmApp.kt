@@ -7,6 +7,6 @@ class TestMvvmApp: MvvmApp() {
 
     open override fun configDI() {
 
-        TestsDepsInjection.config(this@TestMvvmApp)
+        TestsDepsInjection.config(this@TestMvvmApp, viewModelModule)
     }
 }

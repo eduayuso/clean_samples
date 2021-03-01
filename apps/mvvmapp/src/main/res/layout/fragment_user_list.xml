@@ -11,7 +11,7 @@
 
         <variable
             name="viewModel"
-            type="dev.eduayuso.cleansamples.shared.presentation.features.users.UserListViewModel" />
+            type="dev.eduayuso.cleansamples.shared.presentation.mvvm.features.users.UserListViewModel" />
 
     </data>
 

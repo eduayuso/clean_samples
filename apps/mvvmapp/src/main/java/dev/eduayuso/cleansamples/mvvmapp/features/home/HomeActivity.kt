@@ -5,7 +5,7 @@ import androidx.navigation.ui.AppBarConfiguration
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import dev.eduayuso.cleansamples.mvvmapp.R
 import dev.eduayuso.cleansamples.mvvmapp.components.ui.CleanActivity
-import dev.eduayuso.cleansamples.shared.presentation.features.home.HomeViewModel
+import dev.eduayuso.cleansamples.shared.presentation.mvvm.features.home.HomeViewModel
 import androidx.navigation.findNavController
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController

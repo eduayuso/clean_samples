@@ -53,8 +53,7 @@ dependencies {
 
     listOf(
         Dependencies.Modules.data,
-        Dependencies.Modules.domain,
-        Dependencies.Modules.presentation
+        Dependencies.Modules.domain
     ).forEach {
         implementation(project("$it"))
     }
