@@ -1,0 +1,9 @@
+<resources>
+
+    <string name="app_name">CleanSamples</string>
+
+    <string name="title_user_list">Friends</string>
+    <string name="title_post_list">Feed</string>
+    <string name="title_message_list">Messages</string>
+
+</resources>
