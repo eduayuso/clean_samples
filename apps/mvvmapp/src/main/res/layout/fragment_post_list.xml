@@ -3,7 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".features.feed.PostListFragment">
+    tools:context=".features.posts.PostListFragment">
 
     <data>
 
@@ -11,7 +11,7 @@
 
         <variable
             name="viewModel"
-            type="dev.eduayuso.cleansamples.shared.presentation.mvvm.features.feed.PostListViewModel" />
+            type="dev.eduayuso.cleansamples.shared.presentation.mvvm.features.posts.PostListViewModel" />
 
     </data>
 

@@ -39,9 +39,10 @@ class UsersInteractor: IUsersUseCases, IInteractor {
     /**
      * Returns user posts
      */
-    override suspend fun getUserPosts(id: String): List<PostEntity>? {
+    override suspend fun getPostsByUser(id: String): List<PostEntity>? {
 
         val usersRemote = data.users.remote as UsersRemoteRepository
-        return usersRemote.getPosts(id)
+        val posts = usersRemote.getPosts(id)
+        return posts
     }
 }

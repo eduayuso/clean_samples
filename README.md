@@ -2,7 +2,7 @@
 
 [![GitHub license](https://img.shields.io/badge/license-Apache%20License%202.0-blue.svg?style=flat)](http://www.apache.org/licenses/LICENSE-2.0) ![kotlin-version](https://img.shields.io/badge/kotlin-1.4.30-orange)
 
-This is a starting point for **Android** projects designed with **Clean Arquitecture**, intended to be understable, testable and scalable. This project is preconfigured with essentials libraries and tools, as well as modules, interfaces, base classes and sample apps, just ready for you to start your Android app.
+This is a starting point for **Android** projects designed with **Clean Arquitecture**, intended to be understable, testable and scalable. This project is preconfigured with essentials libraries and tools, as well as modules, interfaces, base classes and sample apps, just ready for you to start your Android app. We make use of https://dummyapi.io/ to fetch the data from an API Rest.
 
 The project is Gradle optimized, and divided in modules so that each one has only the required dependencies:
 * **/apps/** Android apps, only depends on Android SDK and presentation layer.
@@ -18,30 +18,30 @@ Each sample app is made with a different architecture:
 * [ ] /apps/mviapp: MVI (Model View Intent)
 
 ## Features
-* [ ] Login
-* [ ] SignUp
 * [x] UserList
-* [ ] UserDetail
+* [x] UserDetail
 * [x] PostList
 * [ ] PostDetail
+* [x] TagList
+* [ ] TagDetail
 
 ## Network implementation
 * [x] Ktor
 * [ ] Retrofit
 
 ## Unit Tests
-* [ ] AuthenticationUsesCases
 * [x] UsersUsesCases
 * [ ] PostsUsesCases
+* [ ] TagsUsesCases
 
 ## Instrumentation Tests
-* [ ] LoginActivity
-* [ ] SignUpActivity
 * [ ] HomeActivity
 * [ ] UserListActivity
 * [ ] UserDetailActivity
 * [ ] PostListActivity
 * [ ] PostDetailActivity
+* [ ] TagListActivity
+* [ ] TagDetailActivity
 
 ## License
 

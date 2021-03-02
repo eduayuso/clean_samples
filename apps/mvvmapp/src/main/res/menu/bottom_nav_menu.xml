@@ -12,8 +12,8 @@
         android:title="@string/title_user_list" />
 
     <item
-        android:id="@+id/navigation_message_list"
-        android:icon="@drawable/ic_baseline_message_24"
-        android:title="@string/title_message_list" />
+        android:id="@+id/navigation_tag_list"
+        android:icon="@drawable/ic_baseline_tag_24"
+        android:title="@string/title_tag_list" />
 
 </menu>

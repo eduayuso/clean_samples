@@ -11,9 +11,9 @@ object HttpMockApiClient {
 
     object MockData {
 
-        val userList    by lazy { readJsonFile("/userList.json") }
-        val userDetail  by lazy { readJsonFile("/userDetail.json") }
-        val userPosts   by lazy { readJsonFile("/userPosts.json") }
+        val userList    by lazy { readJsonFile("/users/userList.json") }
+        val userDetail  by lazy { readJsonFile("/users/userDetail.json") }
+        val userPosts   by lazy { readJsonFile("/users/userPosts.json") }
     }
 
     const val userId            = "0F8JIqi4zwvb77FGz6Wt"

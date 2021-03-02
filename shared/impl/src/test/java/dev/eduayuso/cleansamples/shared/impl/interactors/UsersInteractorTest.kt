@@ -12,6 +12,7 @@ import org.junit.Test
 import org.junit.runner.RunWith
 import org.junit.runners.JUnit4
 import org.koin.core.context.startKoin
+import org.koin.core.context.stopKoin
 
 @RunWith(JUnit4::class)
 class UsersInteractorTest {
@@ -94,7 +95,7 @@ class UsersInteractorTest {
 
             try {
 
-                val posts = interactor.getUserPosts(userId)
+                val posts = interactor.getPostsByUser(userId)
 
                 /**
                  * Check expected result and some data
@@ -123,6 +124,6 @@ class UsersInteractorTest {
 
     @After
     fun tearDown() {
-
+        stopKoin()
     }
 }

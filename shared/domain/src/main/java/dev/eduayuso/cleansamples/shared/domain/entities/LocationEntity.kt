@@ -10,4 +10,7 @@ class LocationEntity(
     val city: String? = null,
     val timezone: String? = null,
     val country: String? = null
-)
+) {
+
+    override fun toString() = "${street ?: ""}, ${city ?: ""} (${country ?: ""})"
+}

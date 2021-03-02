@@ -26,4 +26,9 @@ object DataConstants {
             const val appId = "app-id"
         }
     }
+
+    object ViewArguments {
+
+        const val userId = "userId"
+    }
 }
