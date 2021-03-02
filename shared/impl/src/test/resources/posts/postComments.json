@@ -1,0 +1,60 @@
+{
+  "data": [
+    {
+      "owner": {
+        "id": "jpxJ6CnDgBUcqmMTczMh",
+        "email": "edina.barbosa@example.com",
+        "firstName": "Édina",
+        "title": "ms",
+        "lastName": "Barbosa",
+        "picture": "https://randomuser.me/api/portraits/women/28.jpg"
+      },
+      "id": "yPyeyGhXNcn8dZP6e87o",
+      "message": "😉😉😍😍 Pretty photo",
+      "publishDate": "2020-05-19T17:11:14.284Z"
+    },
+    {
+      "owner": {
+        "id": "IrNhFLyOw2a6R10BntKW",
+        "picture": "https://randomuser.me/api/portraits/women/66.jpg",
+        "lastName": "Çetiner",
+        "title": "miss",
+        "email": "oya.cetiner@example.com",
+        "firstName": "Oya"
+      },
+      "id": "04aA0p5xh5Gj6SqXB8tB",
+      "message": "😊👍👍 Awesome shot",
+      "publishDate": "2020-04-12T20:01:41.212Z"
+    },
+    {
+      "owner": {
+        "id": "URaBcSCMpXr96fpmjCjk",
+        "lastName": "Vega",
+        "email": "roberto.vega@example.com",
+        "firstName": "Roberto",
+        "picture": "https://randomuser.me/api/portraits/men/25.jpg",
+        "title": "mr"
+      },
+      "id": "ZQX9bfvymVusi36Go9D9",
+      "message": "😁😁☺️😌 Impressive image",
+      "publishDate": "2020-03-20T02:34:25.132Z"
+    },
+    {
+      "owner": {
+        "id": "yLyiEdhLwMn5tOPA447y",
+        "email": "andre.robert@example.com",
+        "title": "mr",
+        "firstName": "André",
+        "lastName": "Robert",
+        "picture": "https://randomuser.me/api/portraits/men/9.jpg"
+      },
+      "id": "OQVzaZEOJkqwP26KMET0",
+      "message": "Cool pic",
+      "publishDate": "2020-01-17T03:42:22.157Z"
+    }
+  ],
+  "total": 4,
+  "page": 0,
+  "limit": 10,
+  "offset": 0
+}

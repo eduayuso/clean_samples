@@ -1,0 +1,218 @@
+{
+  "data": [
+    {
+      "owner": {
+        "id": "uQrnqsqyh8FjSXAPc7oA",
+        "email": "emilie.lambert@example.com",
+        "title": "mrs",
+        "picture": "https://randomuser.me/api/portraits/women/93.jpg",
+        "firstName": "Emilie",
+        "lastName": "Lambert"
+      },
+      "id": "SpfH9f9E7o1jdWaUpsLG",
+      "image": "https://img.dummyapi.io/photo-1589469526983-0887ebe10072.jpg",
+      "publishDate": "2020-05-14T16:28:10.135Z",
+      "text": "Cooling off in the fountain white and black short coated dog in water fountain during daytime",
+      "tags": [
+        "dog",
+        "water",
+        "pool"
+      ],
+      "link": "http://aleksmarinkovic.com",
+      "likes": 2
+    },
+    {
+      "owner": {
+        "id": "6wy6UNkZueJfIUfq88d5",
+        "picture": "https://randomuser.me/api/portraits/women/32.jpg",
+        "firstName": "Melanie",
+        "email": "melanie.pilz@example.com",
+        "title": "miss",
+        "lastName": "Pilz"
+      },
+      "id": "4XotWhNPx0DUEKQrsC6V",
+      "image": "https://img.dummyapi.io/photo-1571164712078-972f26d5144d.jpg",
+      "publishDate": "2020-05-05T15:34:08.456Z",
+      "text": "grayscale photography of boy running on shore beside dog",
+      "tags": [
+        "ocean",
+        "nature",
+        "water"
+      ],
+      "link": "https://www.instagram.com/ilyuza.mif/",
+      "likes": 13
+    },
+    {
+      "owner": {
+        "id": "FLgxIsydJ28gBIIKZeMg",
+        "email": "annabel.somby@example.com",
+        "title": "ms",
+        "firstName": "Annabel",
+        "picture": "https://randomuser.me/api/portraits/women/35.jpg",
+        "lastName": "Somby"
+      },
+      "id": "Avgllgw8JQsX7dO7Q6vB",
+      "image": "https://img.dummyapi.io/photo-1505623547966-8af2af3515ac.jpg",
+      "publishDate": "2020-05-03T08:35:52.536Z",
+      "text": "My friend and I went to the local river and played fetch with his two dogs. They were pretty thrilled! two black dogs swimming",
+      "tags": [
+        "dog",
+        "swimming",
+        "water"
+      ],
+      "link": null,
+      "likes": 55
+    },
+    {
+      "owner": {
+        "id": "1pRsh5nXDIH3pjEOZ17A",
+        "lastName": "Vicente",
+        "title": "miss",
+        "firstName": "Margarita",
+        "email": "margarita.vicente@example.com",
+        "picture": "https://randomuser.me/api/portraits/women/5.jpg"
+      },
+      "id": "Si2BZAr0Aj7Y8gJuTVKM",
+      "image": "https://img.dummyapi.io/photo-1524550390021-670246c412c5.jpg",
+      "publishDate": "2020-04-28T10:22:47.541Z",
+      "text": "The powerful and the playful. white and brown American Pit bull terrier on body of water during daytime",
+      "tags": [
+        "grey",
+        "water",
+        "los algarrobos"
+      ],
+      "link": "https://www.behance.net/thestormseeker",
+      "likes": 18
+    },
+    {
+      "owner": {
+        "id": "mHfQtRIKdbZiSGNcC1TO",
+        "picture": "https://randomuser.me/api/portraits/men/52.jpg",
+        "firstName": "Kent",
+        "lastName": "Brewer",
+        "title": "mr",
+        "email": "kent.brewer@example.com"
+      },
+      "id": "Mzv0ffAYFBZTUVS3D46i",
+      "image": "https://img.dummyapi.io/photo-1526487383450-6e863267be08.jpg",
+      "publishDate": "2020-04-07T22:06:05.966Z",
+      "text": "she found a clam to inspect dog on calm body of water",
+      "tags": [
+        "dog",
+        "water",
+        "semiahmoo bay"
+      ],
+      "link": null,
+      "likes": 280
+    },
+    {
+      "owner": {
+        "id": "kZRHHEj0HBUjECjYcgdD",
+        "firstName": "Ann",
+        "picture": "https://randomuser.me/api/portraits/women/18.jpg",
+        "title": "ms",
+        "email": "ann.mason@example.com",
+        "lastName": "Mason"
+      },
+      "id": "zK2yJve1TZLdSjmJnmnG",
+      "image": "https://img.dummyapi.io/photo-1565657250173-362da40d1ac1.jpg",
+      "publishDate": "2020-03-26T18:17:47.482Z",
+      "text": "Dogs live at the beach two brown dogs on beach",
+      "tags": [
+        "water",
+        "nature",
+        "outdoors"
+      ],
+      "link": null,
+      "likes": 10
+    },
+    {
+      "owner": {
+        "id": "Xw09eUBrQvMYfE7C2W6A",
+        "email": "sergio.ferrer@example.com",
+        "lastName": "Ferrer",
+        "picture": "https://randomuser.me/api/portraits/men/29.jpg",
+        "title": "mr",
+        "firstName": "Sergio"
+      },
+      "id": "eyagcWUoCdmZTGIlR5GJ",
+      "image": "https://img.dummyapi.io/photo-1568480460649-14ec4222b7fd.jpg",
+      "publishDate": "2020-03-19T21:13:12.644Z",
+      "text": "Winter sunsets brown and black dog sitting near beach",
+      "tags": [
+        "dog",
+        "shoreline",
+        "water"
+      ],
+      "link": null,
+      "likes": 10
+    },
+    {
+      "owner": {
+        "id": "npLv8ez55w78CLcOygFT",
+        "firstName": "Jan",
+        "picture": "https://randomuser.me/api/portraits/men/60.jpg",
+        "email": "jan.siebert@example.com",
+        "lastName": "Siebert",
+        "title": "mr"
+      },
+      "id": "UnjZyIOcDV7LhaOYF8bI",
+      "image": "https://img.dummyapi.io/photo-1533014404181-5ae76c72e991.jpg",
+      "publishDate": "2020-02-23T12:15:07.090Z",
+      "text": "Patrick Hendry short-coated black dog on water",
+      "tags": [
+        "person",
+        "human",
+        "water"
+      ],
+      "link": "http://www.patrickkylehendry.com",
+      "likes": 67
+    },
+    {
+      "owner": {
+        "id": "5tVxgsqPCjv2Ul5Rc7gw",
+        "email": "abigail.liu@example.com",
+        "lastName": "Liu",
+        "title": "miss",
+        "picture": "https://randomuser.me/api/portraits/women/83.jpg",
+        "firstName": "Abigail"
+      },
+      "id": "RtjRBa9LiINdz2GLpGZA",
+      "image": "https://img.dummyapi.io/photo-1568480487623-4d95844e1e66.jpg",
+      "publishDate": "2020-02-12T16:30:01.299Z",
+      "text": "Quality time close-up photography of short-coated black and tan dog standing on seashore",
+      "tags": [
+        "ocean",
+        "water",
+        "shoreline"
+      ],
+      "link": null,
+      "likes": 19
+    },
+    {
+      "owner": {
+        "id": "XTKfPcNzYYAp7cqaPXAG",
+        "lastName": "Wilson",
+        "firstName": "Benjamin",
+        "picture": "https://randomuser.me/api/portraits/men/14.jpg",
+        "title": "mr",
+        "email": "benjamin.wilson@example.com"
+      },
+      "id": "LyvcJr8xqm3WiY3E5ofQ",
+      "image": "https://img.dummyapi.io/photo-1570579436764-65da83f57f19.jpg",
+      "publishDate": "2019-12-23T20:29:09.744Z",
+      "text": "short-coated brown dog near seashore during daytime",
+      "tags": [
+        "nature",
+        "shoreline",
+        "water"
+      ],
+      "link": "http://www.instagram.com/andrenoboa",
+      "likes": 10
+    }
+  ],
+  "total": 13,
+  "page": 0,
+  "limit": 10,
+  "offset": 0
+}

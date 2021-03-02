@@ -12,25 +12,14 @@ import dev.eduayuso.cleansamples.shared.impl.interactors.PostsInteractor
 import dev.eduayuso.cleansamples.shared.impl.interactors.UsersInteractor
 import dev.eduayuso.cleansamples.shared.impl.services.PostsService
 import dev.eduayuso.cleansamples.shared.impl.source.cache.UsersCacheRepository
-import dev.eduayuso.cleansamples.shared.impl.source.remote.MessagesRemoteRepository
 import dev.eduayuso.cleansamples.shared.impl.source.remote.PostsRemoteRepository
 import dev.eduayuso.cleansamples.shared.impl.source.remote.UsersRemoteRepository
 import dev.eduayuso.cleansamples.shared.impl.source.remote.ktor.HttpMockApiClient
 import dev.eduayuso.cleansamples.shared.impl.source.remote.ktor.impl.ApiClient
-import dev.eduayuso.cleansamples.shared.presentation.mvvm.features.users.UserListViewModel
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 
 object TestsDepsInjection: IDepsInjection() {
-
-    override val viewModelModule = module {
-
-     /*   viewModel { AuthViewModel() }
-        viewModel { HomeViewModel() }*/
-        viewModel { UserListViewModel() }
-      /*  viewModel { UserDetailViewModel() }
-        viewModel { PostListViewModel() }*/
-    }
 
     override val interactorsModule = module {
 
@@ -74,7 +63,7 @@ object TestsDepsInjection: IDepsInjection() {
          * Messages repositories
          */
         //single { MessagesCacheRepository() }
-        single { MessagesRemoteRepository(get()) }
+        //single { MessagesRemoteRepository(get()) }
     }
 
     override val remoteApiClient = module {

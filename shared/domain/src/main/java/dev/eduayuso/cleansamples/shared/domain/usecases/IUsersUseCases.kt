@@ -9,5 +9,5 @@ interface IUsersUseCases: IUseCases {
 
     suspend fun getUserDetail(id: String): UserEntity?
 
-    suspend fun getUserPosts(id: String): List<PostEntity>?
+    suspend fun getPostsByUser(id: String): List<PostEntity>?
 }

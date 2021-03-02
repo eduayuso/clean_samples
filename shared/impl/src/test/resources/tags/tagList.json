@@ -1,0 +1,18 @@
+{
+  "data": [
+    "grass",
+    "road sign",
+    "pet",
+    "los algarrobos",
+    "blanket",
+    "airedale",
+    "sheep",
+    "asleep",
+    "erlangen",
+    "desert"
+  ],
+  "total": 228,
+  "page": 0,
+  "limit": 10,
+  "offset": 0
+}

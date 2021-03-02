@@ -6,11 +6,14 @@ import kotlinx.serialization.Serializable
 data class UserEntity(
 
     var id: String? = null,
+    var phone: String? = null,
     var email: String? = null,
     var firstName: String? = null,
     var lastName: String? = null,
     var picture: String? = null,
-    var location: LocationEntity? = null
+    var location: LocationEntity? = null,
+    var gender: String? = null,
+    var dateOfBirth: String? = null
 
 ): IEntity
 

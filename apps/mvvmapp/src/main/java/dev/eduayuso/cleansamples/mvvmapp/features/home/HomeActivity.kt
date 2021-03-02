@@ -1,6 +1,7 @@
 package dev.eduayuso.cleansamples.mvvmapp.features.home
 
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.ui.AppBarConfiguration
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import dev.eduayuso.cleansamples.mvvmapp.R
@@ -11,9 +12,7 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
-class HomeActivity: CleanActivity() {
-
-    override val viewModel : HomeViewModel by viewModel()
+class HomeActivity: AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
@@ -29,7 +28,7 @@ class HomeActivity: CleanActivity() {
             setOf(
                 R.id.navigation_post_list,
                 R.id.navigation_user_list,
-                R.id.navigation_message_list
+                R.id.navigation_tag_list
             )
         )
         setupActionBarWithNavController(navController, appBarConfiguration)

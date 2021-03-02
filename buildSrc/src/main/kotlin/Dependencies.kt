@@ -54,7 +54,8 @@ object Dependencies {
             "androidx.navigation:navigation-ui:2.3.2",
             "androidx.navigation:navigation-fragment-ktx:2.3.2",
             "androidx.navigation:navigation-ui-ktx:2.3.2",
-            "com.squareup.picasso:picasso:2.8"
+            "com.squareup.picasso:picasso:2.8",
+            "jp.wasabeef:picasso-transformations:2.2.1"
         )
 
         val tests = listOf(

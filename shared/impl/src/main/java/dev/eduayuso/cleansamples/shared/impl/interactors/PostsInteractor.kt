@@ -6,10 +6,11 @@ import dev.eduayuso.cleansamples.shared.domain.entities.PostEntity
 import dev.eduayuso.cleansamples.shared.domain.usecases.IPostsUseCases
 import dev.eduayuso.cleansamples.shared.domain.usecases.IUsersUseCases
 import org.koin.java.KoinJavaComponent
+import org.koin.java.KoinJavaComponent.inject
 
 class PostsInteractor: IPostsUseCases, IInteractor {
 
-    override val data by KoinJavaComponent.inject(IDataManager::class.java)
+    override val data by inject(IDataManager::class.java)
 
     override suspend fun getPostList(): List<PostEntity> {
 

@@ -3,22 +3,23 @@ package dev.eduayuso.cleansamples.shared.impl.di
 import dev.eduayuso.cleansamples.shared.impl.services.UsersService
 import dev.eduayuso.cleansamples.shared.data.IDataManager
 import dev.eduayuso.cleansamples.shared.data.services.IPostsService
+import dev.eduayuso.cleansamples.shared.data.services.ITagsService
 import dev.eduayuso.cleansamples.shared.data.services.IUsersService
 import dev.eduayuso.cleansamples.shared.domain.usecases.IPostsUseCases
+import dev.eduayuso.cleansamples.shared.domain.usecases.ITagsUseCases
 import dev.eduayuso.cleansamples.shared.domain.usecases.IUsersUseCases
 import dev.eduayuso.cleansamples.shared.impl.DataConstants
 import dev.eduayuso.cleansamples.shared.impl.DataManager
-import dev.eduayuso.cleansamples.shared.impl.interactors.AuthInteractor
-import dev.eduayuso.cleansamples.shared.impl.interactors.MessagesInteractor
 import dev.eduayuso.cleansamples.shared.impl.interactors.PostsInteractor
+import dev.eduayuso.cleansamples.shared.impl.interactors.TagsInteractor
 import dev.eduayuso.cleansamples.shared.impl.interactors.UsersInteractor
-import dev.eduayuso.cleansamples.shared.impl.services.MessagesService
 import dev.eduayuso.cleansamples.shared.impl.services.PostsService
-import dev.eduayuso.cleansamples.shared.impl.source.cache.MessagesCacheRepository
+import dev.eduayuso.cleansamples.shared.impl.services.TagsService
 import dev.eduayuso.cleansamples.shared.impl.source.cache.PostsCacheRepository
+import dev.eduayuso.cleansamples.shared.impl.source.cache.TagsCacheRepository
 import dev.eduayuso.cleansamples.shared.impl.source.cache.UsersCacheRepository
-import dev.eduayuso.cleansamples.shared.impl.source.remote.MessagesRemoteRepository
 import dev.eduayuso.cleansamples.shared.impl.source.remote.PostsRemoteRepository
+import dev.eduayuso.cleansamples.shared.impl.source.remote.TagsRemoteRepository
 import dev.eduayuso.cleansamples.shared.impl.source.remote.UsersRemoteRepository
 import dev.eduayuso.cleansamples.shared.impl.source.remote.ktor.impl.ApiClient
 import dev.eduayuso.cleansamples.shared.impl.source.remote.ktor.impl.HttpApiClient
@@ -28,25 +29,25 @@ object DepsInjection: IDepsInjection() {
 
     override val interactorsModule = module {
 
-        single { AuthInteractor(get()) }
         single { provideUsersUseCases() }
         single { providePostsUseCases() }
-        single { MessagesInteractor(get()) }
+        single { provideTagsUseCases() }
     }
 
     fun provideUsersUseCases(): IUsersUseCases = UsersInteractor()
-
     fun providePostsUseCases(): IPostsUseCases = PostsInteractor()
+    fun provideTagsUseCases(): ITagsUseCases = TagsInteractor()
 
     override val servicesModule = module {
 
         single { provideUsersService() }
         single { providePostsService() }
-        single { MessagesService(get(), get()) }
+        single { provideTagsService() }
     }
 
     fun provideUsersService(): IUsersService = UsersService()
     fun providePostsService(): IPostsService = PostsService()
+    fun provideTagsService(): ITagsService = TagsService()
 
     override val repositoryModule = module {
 
@@ -65,10 +66,10 @@ object DepsInjection: IDepsInjection() {
         single { PostsRemoteRepository() }
 
         /**
-         * Messages repositories
+         * Tags repositories
          */
-        single { MessagesCacheRepository() }
-        single { MessagesRemoteRepository(get()) }
+        single { TagsCacheRepository() }
+        single { TagsRemoteRepository() }
     }
 
     override val remoteApiClient = module {

@@ -1,14 +1,17 @@
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.recyclerview.widget.RecyclerView
 import dev.eduayuso.cleansamples.mvvmapp.components.ui.CleanViewHolder
 import dev.eduayuso.cleansamples.mvvmapp.components.ui.ListRecyclerAdapter
 import dev.eduayuso.cleansamples.mvvmapp.databinding.ItemUserBinding
+import dev.eduayuso.cleansamples.mvvmapp.features.users.OnUserClickListener
 import dev.eduayuso.cleansamples.shared.domain.entities.UserEntity
+import dev.eduayuso.cleansamples.shared.presentation.mvvm.features.users.UserListViewModel
 
-class UserListRecyclerAdapter:
+class UserListRecyclerAdapter(
 
-    ListRecyclerAdapter<
+    private val listener: OnUserClickListener
+
+): ListRecyclerAdapter<
         UserEntity,
         UserListRecyclerAdapter.ListViewHolder
     >() {
@@ -27,6 +30,7 @@ class UserListRecyclerAdapter:
         override fun onBind(position: Int) {
 
             boundItem.user = dataList[position]
+            boundItem.listener = listener
             boundItem.executePendingBindings()
         }
     }
