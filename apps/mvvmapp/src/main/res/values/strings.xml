@@ -12,7 +12,7 @@
     <string name="post_detail">Post detail</string>
     <string name="error_fetching_post_details">Error retrieving post details</string>
 
-    <string name="tag_detail">Posts by tag</string>
+    <string name="tag_detail">Posts tagged</string>
     <string name="error_fetching_tag_details">Error retrieving tag details</string>
 
 </resources>

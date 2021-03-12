@@ -86,10 +86,7 @@ class RestConsumer(
         builder.body = body
         builder.url {
             takeFrom(baseUrl)
-            encodedPath = encodedPath.let { startingPath ->
-                path(path)
-                return@let startingPath + encodedPath.substring(1)
-            }
+            encodedPath += path
         }
         with(builder.headers) {
             httpHeaders.map {

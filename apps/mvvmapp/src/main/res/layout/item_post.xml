@@ -6,9 +6,15 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
         <variable
             name="post"
             type="dev.eduayuso.cleansamples.shared.domain.entities.PostEntity" />
+
+        <variable
+            name="listener"
+            type="dev.eduayuso.cleansamples.mvvmapp.features.posts.OnPostClickListener" />
+
     </data>
 
     <androidx.cardview.widget.CardView
@@ -17,6 +23,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
+        android:onClick="@{() -> listener.onPostClick(post.id)}"
         android:elevation="4dp">
 
         <LinearLayout
@@ -81,13 +88,6 @@
                 android:backgroundTint="@color/black"
                 app:setImageUrl="@{post.image}"
                 app:srcCompat="@drawable/ic_baseline_image_24" />
-
-            <TextView
-                android:id="@+id/textView3"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:text="@{post.text}" />
 
         </LinearLayout>
 

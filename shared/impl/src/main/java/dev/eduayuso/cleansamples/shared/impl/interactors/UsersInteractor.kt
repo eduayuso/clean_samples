@@ -18,7 +18,7 @@ class UsersInteractor: IUsersUseCases, IInteractor {
     override suspend fun getUserList(): List<UserEntity> {
 
         val usersInCache = data.users.cache.getAll()
-        // Here you can do some cache logic to fetch from remote or not
+        // Here you can evaluate some cache logic to fetch from remote or not
         return if (usersInCache.isEmpty()) {
             val users = data.users.remote.getAll()
             users.forEach { data.users.cache.insert(it) }

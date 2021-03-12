@@ -6,25 +6,24 @@ import dev.eduayuso.cleansamples.shared.impl.di.TestsDepsInjection
 import junit.framework.TestCase.*
 import kotlinx.coroutines.runBlocking
 import org.junit.After
-import org.junit.Assert
 import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.junit.runners.JUnit4
-import org.koin.core.context.startKoin
 import org.koin.core.context.stopKoin
+import org.koin.test.KoinTest
+import org.koin.test.inject
 
 @RunWith(JUnit4::class)
-class UsersInteractorTest {
+class UsersInteractorTest: KoinTest {
 
-    private lateinit var interactor: UsersInteractor
+    val interactor by inject<IUsersUseCases>()
     val userId = "0F8JIqi4zwvb77FGz6Wt"
 
     @Before
     fun setUp() {
 
         TestsDepsInjection.config()
-        this.interactor = UsersInteractor()
     }
 
     @Test
@@ -55,8 +54,16 @@ class UsersInteractorTest {
                 val checkPkIntegrity = users.size == distinctByIdList.size
                 assertTrue(checkPkIntegrity)
 
+                /**
+                 * Check users from cache
+                 */
+                val usersInCache = interactor.getUserList()
+                assertNotNull(usersInCache)
+                assertEquals(users.size, usersInCache.size)
+
             } catch (e: Exception) {
-                Log.e("Error fetching user list", e.toString())
+
+                fail("Error fetching user list $e")
             }
         }
     }
@@ -83,7 +90,8 @@ class UsersInteractorTest {
                 assertNotNull(user.location)
 
             } catch (e: Exception) {
-                Log.e("Error fetching user list", e.toString())
+
+                fail("Error fetching user list $e")
             }
         }
     }
@@ -117,7 +125,8 @@ class UsersInteractorTest {
                 assertTrue(checkPkIntegrity)
 
             } catch (e: Exception) {
-                Log.e("Error fetching user list", e.toString())
+
+                fail("Error fetching user list $e")
             }
         }
     }

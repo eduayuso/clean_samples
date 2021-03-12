@@ -3,7 +3,7 @@ object Versions {
     /**
      * Kotlin, Java and Gradle versions
      */
-    const val kotlin                = "1.4.30"
+    const val kotlin                = "1.4.31"
     const val gradle                = "4.1.2"
     const val java                  = "1.8"
 
@@ -23,13 +23,14 @@ object Versions {
      */
     object Libs {
 
+        const val serialization     = "1.1.0"
         const val material          = "1.2.1"
         const val compose           = "1.0.0-alpha10"
         const val koin              = "2.2.2"
         const val okhttp            = "4.7.2"
         const val coroutines        = "1.4.2"
         const val ktx               = "2.2.0"
-        const val ktor              = "1.3.2"
+        const val ktor              = "1.5.1"
         const val mockwebserver     = "4.6.0"
         const val junitXExt         = "1.1.2"
         const val testxRules        = "1.3.0"

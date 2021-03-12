@@ -11,28 +11,30 @@ class TagsCacheRepository(
 ): ICacheRepository<String, TagEntity> {
 
     /**
-     * Posts by user
+     * Tag map by id
      */
-    private val posts by lazy {
+    private val tags by lazy {
         HashMap<String /*tag id*/, TagEntity>()
     }
 
-    override suspend fun getById(id: String) = posts[id]
+    override suspend fun getById(id: String) = tags[id]
 
-    override suspend fun getAll() = posts.values.toList()
+    override suspend fun getAll() = tags.values.toList()
 
     override suspend fun insert(entity: TagEntity): TagEntity? {
 
-        TODO("Not yet implemented")
+        tags[entity.id ?: return null] = entity
+        return entity
     }
 
     override suspend fun update(entity: TagEntity): TagEntity? {
 
-        TODO("Not yet implemented")
+        tags[entity.id ?: return null] = entity
+        return entity
     }
 
     override suspend fun delete(entity: TagEntity): Boolean {
 
-        TODO("Not yet implemented")
+        return tags.remove(entity.id ?: return false) != null
     }
 }

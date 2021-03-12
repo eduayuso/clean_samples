@@ -1,7 +1,6 @@
 package dev.eduayuso.cleansamples.shared.impl.source.cache
 
 import dev.eduayuso.cleansamples.shared.data.repository.ICacheRepository
-import dev.eduayuso.cleansamples.shared.data.repository.IRemoteRepository
 import dev.eduayuso.cleansamples.shared.domain.entities.UserEntity
 
 class UsersCacheRepository(

@@ -5,15 +5,19 @@ import dev.eduayuso.cleansamples.mvvmapp.components.ui.CleanViewHolder
 import dev.eduayuso.cleansamples.mvvmapp.components.ui.ListRecyclerAdapter
 import dev.eduayuso.cleansamples.mvvmapp.databinding.ItemPostBinding
 import dev.eduayuso.cleansamples.mvvmapp.databinding.ItemUserBinding
+import dev.eduayuso.cleansamples.mvvmapp.features.posts.OnPostClickListener
+import dev.eduayuso.cleansamples.mvvmapp.features.users.OnUserClickListener
 import dev.eduayuso.cleansamples.shared.domain.entities.PostEntity
 import dev.eduayuso.cleansamples.shared.domain.entities.UserEntity
 
-class PostListRecyclerAdapter:
+class PostListRecyclerAdapter(
 
-    ListRecyclerAdapter<
+    private val listener: OnPostClickListener
+
+): ListRecyclerAdapter<
         PostEntity,
         PostListRecyclerAdapter.ListViewHolder
-        >() {
+    >() {
 
     override fun onCreateViewHolder(parent: ViewGroup, i: Int): ListViewHolder {
 
@@ -29,6 +33,7 @@ class PostListRecyclerAdapter:
         override fun onBind(position: Int) {
 
             boundItem.post = dataList[position]
+            boundItem.listener = listener
             boundItem.executePendingBindings()
         }
     }

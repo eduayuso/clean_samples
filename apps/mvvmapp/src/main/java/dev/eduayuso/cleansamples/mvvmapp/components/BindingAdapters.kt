@@ -10,7 +10,10 @@ import androidx.databinding.BindingAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.squareup.picasso.Picasso
 import com.squareup.picasso.Transformation
+import dev.eduayuso.cleansamples.mvvmapp.features.posts.CommentsListRecyclerAdapter
 import dev.eduayuso.cleansamples.mvvmapp.features.tags.TagListRecyclerAdapter
+import dev.eduayuso.cleansamples.mvvmapp.features.tags.TagMiniListRecyclerAdapter
+import dev.eduayuso.cleansamples.shared.domain.entities.CommentEntity
 import dev.eduayuso.cleansamples.shared.domain.entities.PostEntity
 import dev.eduayuso.cleansamples.shared.domain.entities.TagEntity
 import dev.eduayuso.cleansamples.shared.domain.entities.UserEntity
@@ -65,6 +68,20 @@ fun bindTagListAdapter(recyclerView: RecyclerView, tags: List<TagEntity>) {
 
     val adapter = recyclerView.adapter as TagListRecyclerAdapter?
     adapter?.addItems(tags)
+}
+
+@BindingAdapter("tagMiniListAdapter")
+fun bindTagMiniListAdapter(recyclerView: RecyclerView, tags: List<TagEntity>) {
+
+    val adapter = recyclerView.adapter as TagMiniListRecyclerAdapter?
+    adapter?.addItems(tags)
+}
+
+@BindingAdapter("commentsListAdapter")
+fun bindCommentsAdapter(recyclerView: RecyclerView, userList: List<CommentEntity>) {
+
+    val adapter = recyclerView.adapter as CommentsListRecyclerAdapter?
+    adapter?.addItems(userList)
 }
 
 @BindingAdapter("textDate")

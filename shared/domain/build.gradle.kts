@@ -15,5 +15,5 @@ android {
 dependencies {
 
     // 'api' instead of 'implementation' to make it accessible in projects/modules that import this module
-    api("org.jetbrains.kotlinx:kotlinx-serialization-json:1.0.1")
+    api(Dependencies.Libs.kotlinSerialization)
 }

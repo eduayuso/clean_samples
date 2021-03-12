@@ -8,8 +8,12 @@ The project is Gradle optimized, and divided in modules so that each one has onl
 * **/apps/** Android apps, only depends on Android SDK and presentation layer.
 * **/shared/presentation/** Contains the presenters. Depends on data layer.
 * **/shared/data/** Contains the services and data source definitions. Depends on domain layer.
-* **/shared/impl/** Contains the implementation of interactors, services and repositories. Depends on data and domains layers and in data access libraries (Retrofit, Ktor, SQLite, ...)
+* **/shared/impl/** Contains the implementation of interactors, services and repositories. Depends on data and domains layers and in data access libraries (Retrofit, Ktor, SQLite, ...). This folder also contains unit tests fetching data from a mock server.
 * **/shared/domain/** Contains the data entities and the use cases interfaces. Only has a dependency on kotlin serialization library.
+
+## Sample
+
+![Alt Text](demo.gif)
 
 ## Apps and architecture used
 Each sample app is made with a different architecture:
@@ -21,9 +25,9 @@ Each sample app is made with a different architecture:
 * [x] UserList
 * [x] UserDetail
 * [x] PostList
-* [ ] PostDetail
+* [x] PostDetail
 * [x] TagList
-* [ ] TagDetail
+* [x] TagDetail
 
 ## Network implementation
 * [x] Ktor
@@ -31,8 +35,8 @@ Each sample app is made with a different architecture:
 
 ## Unit Tests
 * [x] UsersUsesCases
-* [ ] PostsUsesCases
-* [ ] TagsUsesCases
+* [x] PostsUsesCases
+* [x] TagsUsesCases
 
 ## Instrumentation Tests
 * [ ] HomeActivity

@@ -29,6 +29,7 @@ object Dependencies {
     object Libs {
 
         const val kotlinStdLib          = "org.jetbrains.kotlin:kotlin-stdlib:${Versions.kotlin}"
+        const val kotlinSerialization   = "org.jetbrains.kotlinx:kotlinx-serialization-json:${Versions.Libs.serialization}"
         const val androidCoreKtx        = "androidx.core:core-ktx:1.3.2"
         const val coroutinesAndroid     = "org.jetbrains.kotlinx:kotlinx-coroutines-android:${Versions.Libs.coroutines}"
         const val coroutinesCore        = "org.jetbrains.kotlinx:kotlinx-coroutines-core:${Versions.Libs.coroutines}"
@@ -50,10 +51,12 @@ object Dependencies {
         val androidUi = listOf(
             "androidx.appcompat:appcompat:1.2.0",
             "androidx.constraintlayout:constraintlayout:2.0.4",
+            "com.google.android:flexbox:2.0.1",
             "androidx.navigation:navigation-fragment:2.3.2",
             "androidx.navigation:navigation-ui:2.3.2",
             "androidx.navigation:navigation-fragment-ktx:2.3.2",
             "androidx.navigation:navigation-ui-ktx:2.3.2",
+            "androidx.fragment:fragment-testing:1.2.5",
             "com.squareup.picasso:picasso:2.8",
             "jp.wasabeef:picasso-transformations:2.2.1"
         )
