@@ -34,9 +34,9 @@ Each sample app is made with a different architecture:
 * [ ] Retrofit
 
 ## Unit Tests
-* [x] UsersUsesCases
-* [x] PostsUsesCases
-* [x] TagsUsesCases
+* [x] UsersUseCases
+* [x] PostsUseCases
+* [x] TagsUseCases
 
 ## Instrumentation Tests
 * [ ] UserListFragment
