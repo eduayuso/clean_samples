@@ -39,10 +39,9 @@ Each sample app is made with a different architecture:
 * [x] TagsUsesCases
 
 ## Instrumentation Tests
-* [ ] HomeActivity
-* [ ] UserListActivity
+* [ ] UserListFragment
 * [ ] UserDetailActivity
-* [ ] PostListActivity
+* [ ] PostListFragment
 * [ ] PostDetailActivity
 * [ ] TagListActivity
 * [ ] TagDetailActivity
