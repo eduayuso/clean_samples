@@ -1,6 +1,7 @@
 package dev.eduayuso.cleansamples.mvvmapp.features.users
 
 import PostMiniListRecyclerAdapter
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.recyclerview.widget.GridLayoutManager
@@ -8,6 +9,7 @@ import dev.eduayuso.cleansamples.mvvmapp.R
 import dev.eduayuso.cleansamples.mvvmapp.components.ui.CleanActivity
 import dev.eduayuso.cleansamples.mvvmapp.databinding.ActivityUserDetailBinding
 import dev.eduayuso.cleansamples.mvvmapp.features.posts.OnPostClickListener
+import dev.eduayuso.cleansamples.mvvmapp.features.posts.PostDetailActivity
 import dev.eduayuso.cleansamples.shared.impl.DataConstants
 import dev.eduayuso.cleansamples.shared.presentation.mvvm.features.users.UserDetailViewModel
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -63,6 +65,9 @@ class UserDetailActivity: CleanActivity<ActivityUserDetailBinding>(), OnPostClic
 
     override fun onPostClick(id: String) {
 
-
+        val intent = Intent(this, PostDetailActivity::class.java).apply {
+            putExtra(DataConstants.ViewArguments.postId, id)
+        }
+        startActivity(intent)
     }
 }

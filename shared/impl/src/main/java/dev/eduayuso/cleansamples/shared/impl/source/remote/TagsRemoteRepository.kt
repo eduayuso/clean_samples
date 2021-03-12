@@ -11,7 +11,8 @@ class TagsRemoteRepository: IRemoteRepository<String /*pk type*/, TagEntity> {
     val api by KoinJavaComponent.inject(ApiClient::class.java)
 
     private var tagsUrl = DataConstants.Apis.DummyApi.tags
-    private var limit    = "limit=10"
+    private var postsUrl = DataConstants.Apis.DummyApi.posts
+    private var limit    = "limit=20"
 
     override suspend fun getById(id: String) =
         TODO("Not yet implemented")
@@ -24,6 +25,15 @@ class TagsRemoteRepository: IRemoteRepository<String /*pk type*/, TagEntity> {
         } ?: run {
             emptyList()
         }
+
+    suspend fun getPostByTag(id: String): List<PostEntity> {
+
+        val url = "$tagsUrl/$id/$postsUrl?$limit"
+        var type = PostListResponse.serializer()
+
+        val listWrapper = api.consume(url).get().response(type)
+        return listWrapper?.data ?: emptyList()
+    }
 
     override suspend fun insert(entity: TagEntity): TagEntity? {
         TODO("Not yet implemented")

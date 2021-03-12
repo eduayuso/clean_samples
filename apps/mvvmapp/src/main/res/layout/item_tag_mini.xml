@@ -17,12 +17,13 @@
     <Button
         android:id="@+id/button"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="4dp"
+        android:layout_height="36dp"
         android:layout_weight="1"
         android:backgroundTint="@android:color/holo_blue_light"
         android:onClick="@{() -> listener.onTagClick(tag.id)}"
         android:text="@{tag.id}"
-        android:textColor="@color/white" />
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="12dp" />
 
 </layout>

@@ -3,16 +3,23 @@ package dev.eduayuso.cleansamples.shared.impl.di
 import dev.eduayuso.cleansamples.shared.impl.services.UsersService
 import dev.eduayuso.cleansamples.shared.data.IDataManager
 import dev.eduayuso.cleansamples.shared.data.services.IPostsService
+import dev.eduayuso.cleansamples.shared.data.services.ITagsService
 import dev.eduayuso.cleansamples.shared.data.services.IUsersService
 import dev.eduayuso.cleansamples.shared.domain.usecases.IPostsUseCases
+import dev.eduayuso.cleansamples.shared.domain.usecases.ITagsUseCases
 import dev.eduayuso.cleansamples.shared.domain.usecases.IUsersUseCases
 import dev.eduayuso.cleansamples.shared.impl.DataConstants
 import dev.eduayuso.cleansamples.shared.impl.DataManager
 import dev.eduayuso.cleansamples.shared.impl.interactors.PostsInteractor
+import dev.eduayuso.cleansamples.shared.impl.interactors.TagsInteractor
 import dev.eduayuso.cleansamples.shared.impl.interactors.UsersInteractor
 import dev.eduayuso.cleansamples.shared.impl.services.PostsService
+import dev.eduayuso.cleansamples.shared.impl.services.TagsService
+import dev.eduayuso.cleansamples.shared.impl.source.cache.PostsCacheRepository
+import dev.eduayuso.cleansamples.shared.impl.source.cache.TagsCacheRepository
 import dev.eduayuso.cleansamples.shared.impl.source.cache.UsersCacheRepository
 import dev.eduayuso.cleansamples.shared.impl.source.remote.PostsRemoteRepository
+import dev.eduayuso.cleansamples.shared.impl.source.remote.TagsRemoteRepository
 import dev.eduayuso.cleansamples.shared.impl.source.remote.UsersRemoteRepository
 import dev.eduayuso.cleansamples.shared.impl.source.remote.ktor.HttpMockApiClient
 import dev.eduayuso.cleansamples.shared.impl.source.remote.ktor.impl.ApiClient
@@ -23,25 +30,25 @@ object TestsDepsInjection: IDepsInjection() {
 
     override val interactorsModule = module {
 
-       //single { AuthInteractor(get()) }
         single { provideUsersUseCases() }
-       /* single { providePostsUseCases() }
-        single { MessagesInteractor(get()) }*/
+        single { providePostsUseCases() }
+        single { provideTagsUseCases() }
     }
 
     private fun provideUsersUseCases(): IUsersUseCases = UsersInteractor()
-
     private fun providePostsUseCases(): IPostsUseCases = PostsInteractor()
+    private fun provideTagsUseCases(): ITagsUseCases = TagsInteractor()
 
     override val servicesModule = module {
 
         single { provideUsersService() }
-        /*single { providePostsService() }
-        single { MessagesService(get(), get()) }*/
+        single { providePostsService() }
+        single { provideTagsService() }
     }
 
     private fun provideUsersService(): IUsersService = UsersService()
     private fun providePostsService(): IPostsService = PostsService()
+    private fun provideTagsService(): ITagsService = TagsService()
 
     override val repositoryModule = module {
 
@@ -56,14 +63,14 @@ object TestsDepsInjection: IDepsInjection() {
         /**
          * Posts repositories
          */
-        //single { PostsCacheRepository() }
+        single { PostsCacheRepository() }
         single { PostsRemoteRepository() }
 
         /**
-         * Messages repositories
+         * Tags repositories
          */
-        //single { MessagesCacheRepository() }
-        //single { MessagesRemoteRepository(get()) }
+        single { TagsCacheRepository() }
+        single { TagsRemoteRepository() }
     }
 
     override val remoteApiClient = module {

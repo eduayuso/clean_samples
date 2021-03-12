@@ -24,6 +24,14 @@
             android:name=".features.users.UserDetailActivity"
             android:label="@string/user_detail" />
 
+        <activity
+            android:name=".features.posts.PostDetailActivity"
+            android:label="@string/post_detail" />
+
+        <activity
+            android:name=".features.tags.TagDetailActivity"
+            android:label="@string/tag_detail" />
+
     </application>
 
 </manifest>

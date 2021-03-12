@@ -13,7 +13,7 @@ data class UserEntity(
     var picture: String? = null,
     var location: LocationEntity? = null,
     var gender: String? = null,
-    var dateOfBirth: String? = null
+    var dateOfBirth: String? = null,
 
 ): IEntity
 
