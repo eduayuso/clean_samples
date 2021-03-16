@@ -53,7 +53,7 @@ class PostDetailActivity: CleanActivity<ActivityPostDetailBinding>(), OnTagClick
         /**
          * Comment list recycler
          */
-        binding.commentsRecyclerView.adapter = CommentsListRecyclerAdapter()
+        binding.commentsRecyclerView.adapter = CommentListRecyclerAdapter()
         val gridLayoutManager = GridLayoutManager(this, 1)
         binding.commentsRecyclerView.layoutManager = gridLayoutManager
         binding.commentsRecyclerView.setHasFixedSize(true)

@@ -7,9 +7,9 @@ import dev.eduayuso.cleansamples.mvvmapp.components.ui.ListRecyclerAdapter
 import dev.eduayuso.cleansamples.mvvmapp.databinding.ItemCommentBinding
 import dev.eduayuso.cleansamples.shared.domain.entities.CommentEntity
 
-class CommentsListRecyclerAdapter: ListRecyclerAdapter<
+class CommentListRecyclerAdapter: ListRecyclerAdapter<
         CommentEntity,
-        CommentsListRecyclerAdapter.ListViewHolder
+        CommentListRecyclerAdapter.ListViewHolder
         >() {
 
     override fun onCreateViewHolder(parent: ViewGroup, i: Int): ListViewHolder {

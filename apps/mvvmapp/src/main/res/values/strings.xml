@@ -1,6 +1,6 @@
 <resources>
 
-    <string name="app_name">CleanSamples</string>
+    <string name="app_name">CleanMVVM</string>
 
     <string name="title_user_list">Friends</string>
     <string name="title_post_list">Feed</string>

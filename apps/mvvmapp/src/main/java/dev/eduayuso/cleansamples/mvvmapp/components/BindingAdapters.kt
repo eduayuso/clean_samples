@@ -9,8 +9,7 @@ import android.widget.TextView
 import androidx.databinding.BindingAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.squareup.picasso.Picasso
-import com.squareup.picasso.Transformation
-import dev.eduayuso.cleansamples.mvvmapp.features.posts.CommentsListRecyclerAdapter
+import dev.eduayuso.cleansamples.mvvmapp.features.posts.CommentListRecyclerAdapter
 import dev.eduayuso.cleansamples.mvvmapp.features.tags.TagListRecyclerAdapter
 import dev.eduayuso.cleansamples.mvvmapp.features.tags.TagMiniListRecyclerAdapter
 import dev.eduayuso.cleansamples.shared.domain.entities.CommentEntity
@@ -80,7 +79,7 @@ fun bindTagMiniListAdapter(recyclerView: RecyclerView, tags: List<TagEntity>) {
 @BindingAdapter("commentsListAdapter")
 fun bindCommentsAdapter(recyclerView: RecyclerView, userList: List<CommentEntity>) {
 
-    val adapter = recyclerView.adapter as CommentsListRecyclerAdapter?
+    val adapter = recyclerView.adapter as CommentListRecyclerAdapter?
     adapter?.addItems(userList)
 }
 

@@ -1,20 +1,22 @@
-package dev.eduayuso.cleansamples.mvpapp.features.feed
+package dev.eduayuso.cleansamples.mvpapp.features.posts
 
 import android.view.View
 import android.view.ViewGroup
-import android.widget.EditText
 import android.widget.ImageView
 import android.widget.TextView
 import dev.eduayuso.cleansamples.mvpapp.R
+import dev.eduayuso.cleansamples.mvpapp.components.bindAvatarUrl
 import dev.eduayuso.cleansamples.mvpapp.components.bindImageUrl
 import dev.eduayuso.cleansamples.mvpapp.components.inflate
 import dev.eduayuso.cleansamples.mvpapp.components.ui.CleanViewHolder
 import dev.eduayuso.cleansamples.mvpapp.components.ui.ListRecyclerAdapter
 import dev.eduayuso.cleansamples.shared.domain.entities.PostEntity
 
-class PostListRecyclerAdapter:
+class PostListRecyclerAdapter(
 
-    ListRecyclerAdapter<PostEntity, PostListRecyclerAdapter.ListViewHolder>() {
+    val listener: OnPostClickListener
+
+): ListRecyclerAdapter<PostEntity, PostListRecyclerAdapter.ListViewHolder>() {
 
     override fun onCreateViewHolder(
         parent: ViewGroup,
@@ -42,7 +44,7 @@ class PostListRecyclerAdapter:
              * Author picture
              */
             itemView.findViewById<ImageView>(R.id.authorImageView).apply {
-                bindImageUrl(post.owner?.picture)
+                bindAvatarUrl(post.owner?.picture)
             }
 
             /**
@@ -59,11 +61,8 @@ class PostListRecyclerAdapter:
                 bindImageUrl(post.image)
             }
 
-            /**
-             * Publish date
-             */
-            itemView.findViewById<TextView>(R.id.postText).apply {
-                text = "${post.text}"
+            itemView.setOnClickListener {
+                listener.onPostClick(post.id!!)
             }
         }
     }

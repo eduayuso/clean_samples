@@ -15,6 +15,7 @@ abstract class CleanActivity<E: IViewEvents>: AppCompatActivity(), IViewEvents {
 
         super.onCreate(savedInstanceState)
         this.presenter.listener = this as E?
+        this.setContentView(layoutResourceId)
     }
 
     override fun onDestroy() {

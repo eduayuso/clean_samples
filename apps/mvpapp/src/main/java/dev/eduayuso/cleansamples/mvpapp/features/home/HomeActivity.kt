@@ -27,7 +27,7 @@ class HomeActivity: AppCompatActivity() {
             setOf(
                 R.id.navigation_post_list,
                 R.id.navigation_user_list,
-                R.id.navigation_message_list
+                R.id.navigation_tag_list
             )
         )
         setupActionBarWithNavController(navController, appBarConfiguration)

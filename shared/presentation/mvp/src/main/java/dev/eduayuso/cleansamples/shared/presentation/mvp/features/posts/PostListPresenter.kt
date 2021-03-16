@@ -1,15 +1,15 @@
-package dev.eduayuso.cleansamples.shared.presentation.mvp.features.feed
+package dev.eduayuso.cleansamples.shared.presentation.mvp.features.posts
 
 import android.util.Log
-import dev.eduayuso.cleansamples.shared.domain.entities.PostEntity
 import dev.eduayuso.cleansamples.shared.domain.usecases.IPostsUseCases
 import dev.eduayuso.cleansamples.shared.presentation.mvp.CleanPresenter
 import kotlinx.coroutines.launch
 import org.koin.java.KoinJavaComponent
+import org.koin.java.KoinJavaComponent.inject
 
 class PostListPresenter: CleanPresenter<IPostListEvents>() {
 
-    override val interactor by KoinJavaComponent.inject(IPostsUseCases::class.java)
+    override val interactor by inject(IPostsUseCases::class.java)
 
     fun fetchPosts() {
 
@@ -18,12 +18,15 @@ class PostListPresenter: CleanPresenter<IPostListEvents>() {
         launch {
 
             try {
-                val list = interactor.getPostList()
-                Log.d("a", "${list.size}")
-                listener?.onPostListFetched(list)
+                interactor.getPostList().let {
+                    posts -> listener?.onPostListFetched(posts)
+                }
 
             } catch (e: Exception) {
-                Log.d("Error fetching posts", e.toString())
+                "Error fetching posts".let {
+                    Log.d(it, e.toString())
+                    listener?.onError(it)
+                }
 
             } finally {
                 listener?.hideLoading()
