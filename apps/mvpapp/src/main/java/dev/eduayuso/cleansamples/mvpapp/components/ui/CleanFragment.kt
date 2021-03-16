@@ -22,6 +22,7 @@ abstract class CleanFragment<E: IViewEvents>: Fragment(), IViewEvents {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
 
+        this.presenter.listener = this as E?
         return inflater.inflate(this.layoutResourceId, container, false)
     }
 

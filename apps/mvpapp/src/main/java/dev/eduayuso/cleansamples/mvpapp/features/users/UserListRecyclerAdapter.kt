@@ -7,15 +7,18 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import dev.eduayuso.cleansamples.mvpapp.R
+import dev.eduayuso.cleansamples.mvpapp.components.bindAvatarUrl
 import dev.eduayuso.cleansamples.mvpapp.components.bindImageUrl
 import dev.eduayuso.cleansamples.mvpapp.components.inflate
 import dev.eduayuso.cleansamples.mvpapp.components.ui.CleanViewHolder
 import dev.eduayuso.cleansamples.mvpapp.components.ui.ListRecyclerAdapter
 import dev.eduayuso.cleansamples.shared.domain.entities.UserEntity
 
-class UserListRecyclerAdapter:
+class UserListRecyclerAdapter(
 
-    ListRecyclerAdapter<
+    private val listener: OnUserClickListener
+
+): ListRecyclerAdapter<
             UserEntity,
             UserListRecyclerAdapter.ListViewHolder
             >() {
@@ -50,7 +53,14 @@ class UserListRecyclerAdapter:
              * User picture
              */
             itemView.findViewById<ImageView>(R.id.userImageView).apply {
-                bindImageUrl(user.picture)
+                bindAvatarUrl(user.picture)
+            }
+
+            /**
+             * Click listener
+             */
+            itemView.setOnClickListener {
+                listener.onUserClick(user.id!!)
             }
         }
     }
