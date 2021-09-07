@@ -4,16 +4,13 @@ plugins {
 }
 
 android {
-    compileSdkVersion(Versions.Android.compileSdk)
-    buildToolsVersion(Versions.Android.buildTools)
+    compileSdk = Versions.Android.compileSdk
+    buildToolsVersion  = Versions.Android.buildTools
 
     defaultConfig {
 
-        versionName = Apps.MvpApp.versionName
-        versionCode = Apps.MvpApp.versionCode
-
-        minSdkVersion(Versions.Android.minSdk)
-        targetSdkVersion(Versions.Android.targetSdk)
+        minSdk = Versions.Android.minSdk
+        targetSdk = Versions.Android.targetSdk
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -23,10 +20,12 @@ android {
             isMinifyEnabled = false
         }
     }
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
     }
+
     kotlinOptions {
         jvmTarget = Versions.java
     }

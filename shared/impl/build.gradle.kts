@@ -4,13 +4,10 @@ plugins {
 }
 
 android {
-    compileSdkVersion(Versions.Android.compileSdk)
-    buildToolsVersion(Versions.Android.buildTools)
+    compileSdk = Versions.Android.compileSdk
+    buildToolsVersion  = Versions.Android.buildTools
 
     defaultConfig {
-
-        versionName = Apps.MvvmApp.versionName
-        versionCode = Apps.MvvmApp.versionCode
 
         minSdkVersion(Versions.Android.minSdk)
         targetSdkVersion(Versions.Android.targetSdk)
@@ -23,12 +20,14 @@ android {
             isMinifyEnabled = false
         }
     }
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
     }
+
     kotlinOptions {
-        jvmTarget = "1.8"
+        jvmTarget = Versions.java
     }
 }
 

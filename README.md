@@ -19,6 +19,7 @@ Each sample app is made with a different presentation architecture:
 * [x] /apps/mvpapp: MVP (Model View Presenter)
 * [x] /apps/mvvmapp: MVVM (Model View View-model).
 * [ ] /apps/mviapp: MVI (Model View Intent)
+* [x] /apps/composemvvmapp: MVVM with Jetpack Compose.
 
 ## Features
 * [x] UserList
@@ -27,6 +28,10 @@ Each sample app is made with a different presentation architecture:
 * [x] PostDetail
 * [x] TagList
 * [x] TagDetail
+
+## UI implementation
+* [x] Classic XML layouts
+* [x] Jetpack Compose
 
 ## Network implementation
 * [x] Ktor

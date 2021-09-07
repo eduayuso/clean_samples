@@ -25,7 +25,7 @@ class PostsRemoteRepository: IRemoteRepository<String /*pk type*/, PostEntity> {
     }
 
     /**
-     * https://dummyapi.io/data/api/post/SFAt3mJK0qu4QOd9LgSX/comment?limit=10
+     * https://dummyapi.io/data/api/v1/post/SFAt3mJK0qu4QOd9LgSX/comment?limit=10
      */
     suspend fun getComments(id: String): List<CommentEntity> {
 

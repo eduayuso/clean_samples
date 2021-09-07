@@ -3,8 +3,8 @@ object Versions {
     /**
      * Kotlin, Java and Gradle versions
      */
-    const val kotlin                = "1.4.31"
-    const val gradle                = "4.1.2"
+    const val kotlin                = "1.5.21"
+    const val gradle                = "7.0.0"
     const val java                  = "1.8"
 
     /**
@@ -16,6 +16,7 @@ object Versions {
         const val targetSdk         = 30
         const val minSdk            = 21
         const val buildTools        = "30.0.2"
+        const val compose           = "1.0.1"
     }
 
     /**

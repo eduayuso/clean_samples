@@ -1,5 +1,3 @@
-import sun.util.logging.resources.logging
-
 object Dependencies {
 
     object Plugins {
@@ -60,6 +58,18 @@ object Dependencies {
             "com.squareup.picasso:picasso:2.8",
             "jp.wasabeef:picasso-transformations:2.2.1"
         )
+        
+        val androidCompose = listOf(
+            "androidx.appcompat:appcompat:1.2.0",
+            "com.google.android.material:material:1.3.0",
+            "androidx.compose.material:material:${Versions.Android.compose}",
+            "androidx.compose.ui:ui:${Versions.Android.compose}",
+            "androidx.lifecycle:lifecycle-runtime-ktx:2.3.1",
+            "androidx.activity:activity-compose:${Versions.Android.compose}",
+            "androidx.lifecycle:lifecycle-viewmodel-compose:1.0.0-alpha07",
+            "androidx.compose.ui:ui-tooling:${Versions.Android.compose}",
+            "androidx.navigation:navigation-compose:2.4.0-alpha05"
+        )
 
         val tests = listOf(
             "junit:junit:4.+",
@@ -70,7 +80,7 @@ object Dependencies {
             "org.koin:koin-test:${Versions.Libs.koin}",
             "io.mockk:mockk:${Versions.Libs.mockkVersion}"
         )
-
+        
         // Instrumentation tests (Android components required)
         val instTests = listOf(
             "org.jetbrains.kotlinx:kotlinx-coroutines-test:${Versions.Libs.coroutines}",

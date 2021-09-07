@@ -5,7 +5,7 @@ plugins {
 }
 
 android {
-    compileSdkVersion(Versions.Android.compileSdk)
+    compileSdk = Versions.Android.compileSdk
     defaultConfig {
         minSdkVersion(Versions.Android.minSdk)
         targetSdkVersion(Versions.Android.targetSdk)

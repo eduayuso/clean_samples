@@ -8,8 +8,8 @@ val app = Apps.MvpApp
 
 android {
 
-    compileSdkVersion(Versions.Android.compileSdk)
-    buildToolsVersion(Versions.Android.buildTools)
+    compileSdk = Versions.Android.compileSdk
+    buildToolsVersion = Versions.Android.buildTools
 
     defaultConfig {
 
@@ -17,8 +17,8 @@ android {
         versionName = app.versionName
         versionCode = app.versionCode
 
-        minSdkVersion(Versions.Android.minSdk)
-        targetSdkVersion(Versions.Android.targetSdk)
+        minSdk = Versions.Android.minSdk
+        targetSdk =Versions.Android.targetSdk
 
         testInstrumentationRunner = app.testInstRunner
     }
@@ -29,11 +29,6 @@ android {
         }
     }
 
-    compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
-    }
-
     buildFeatures {
         dataBinding = app.useDataBinding
     }
@@ -42,6 +37,11 @@ android {
         exclude("META-INF/AL2.0")
         exclude("META-INF/LGPL2.1")
         exclude("META-INF/*.kotlin_module")
+    }
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
     }
 
     kotlinOptions {

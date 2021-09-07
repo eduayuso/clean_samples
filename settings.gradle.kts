@@ -1,5 +1,6 @@
 rootProject.name = "CleanSamples"
 
+include(":apps:composemvvmapp")
 include(":apps:mvvmapp")
 include(":apps:mvpapp")
 
